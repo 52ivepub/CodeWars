@@ -1,3 +1,5 @@
+url = 'https://www.codewars.com/kata/5679aa472b8f57fb8c000047/train/python'
+
 arr = [1,2,3,4,3,2,1]
 # ),3
 
