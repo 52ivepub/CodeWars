@@ -8,10 +8,16 @@ def diamond(n):
     res = ''
     if n % 2 == 0 or n < 0:
         return None
-    diamonds_start = list(range(1, n, 2))
-    diamonds_end = diamonds_start[::-1]
-    diamonds_start.append(n)
-    diamonds_start.extend(diamonds_end)
+    # diamonds_start = list(range(1, n, 2))
+    # diamonds_end = diamonds_start[::-1]
+    # diamonds_start.append(n)
+    # diamonds_start.extend(diamonds_end)
+    if n > 1:
+        diam = ["*" * i  for i in range(1, n, 2)]
+        diam.extend(diam[(n//2 - 1)::-1])
+    else:
+        diam = "*\n"
+
     list_space = [" " * i for i in range(n//2, -1, -1)]
     list_space.extend(list_space[(n//2 - 1)::-1])
     for i in range(len(diamonds_start)):
@@ -24,8 +30,20 @@ def diamond(n):
 
 
 print(diamond(n))
+print("*" * 0)
 
-x = ['a', "b", "c"]
-x.extend(x[-2: :-1])
-print(x)
+# def diamond(n):
+#     # Make some diamonds!
+#     res = ''
+#     if n % 2 == 0 or n < 0:
+#         return None
+#     diamonds_start = list(range(1, n, 2))
+#     diamonds_end = diamonds_start[::-1]
+#     diamonds_start.append(n)
+#     diamonds_start.extend(diamonds_end)
+#     list_space = [" " * i for i in range(n//2, -1, -1)]
+#     list_space.extend(list_space[(n//2 - 1)::-1])
+#     for i in range(len(diamonds_start)):
+#         res += list_space[i] + ("*" * diamonds_start[i]) + "\n"
+#     return res
 
