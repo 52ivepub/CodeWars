@@ -6,9 +6,6 @@ words = "Weird string case"
 
 
 def to_weird_case(words):
-    if len(words.split()) == 1:
-        res = [y.upper() if x % 2 == 0 else y.lower() for x, y in enumerate(words)]
-        return "".join(res)
     res = []
     for i in words.split():
         seed = "".join([y.upper() if x % 2 == 0 else y.lower() for x, y in enumerate(i)])
