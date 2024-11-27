@@ -6,7 +6,8 @@ categories = ["A", "B", "C", "W"]
 
 
 def stock_list(stocklist, categories):
-    k = any(i[0] in categories for i in stocklist)
+    if len(stocklist) == 0 or len(categories) == 0:
+        return ''
     res = ''
     seed = {x : 0 for x in categories}
     for i in categories:
@@ -16,13 +17,12 @@ def stock_list(stocklist, categories):
                     seed[i] += int(x.split()[1])
                 else:
                     seed[i] = int(x.split()[1])
-
     for x, y in seed.items():
         res += f"({x} : {y}) - "
     return res[:-3]
 
 
-
-
-
 print(stock_list(stocklist, categories))
+
+
+
