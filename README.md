@@ -1,2 +1,2 @@
-# CodeWars
-CodeWars
+# Тренирую алгоритмы в CodeWars
+
