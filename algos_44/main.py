@@ -29,8 +29,10 @@ class PaginationHelper:
             res.append(self.items_per_page)
             count -= self.items_per_page
         res.append(count)
-        if page_index in range(self.page_count()): return res[page_index]
-        else: return -1
+        if page_index in range(self.page_count()):
+            return res[page_index]
+        else:
+            return -1
 
     # determines what page an item at the given index is on. Zero based indexes.
     # this method should return -1 for item_index values that are out of range
@@ -43,5 +45,6 @@ class PaginationHelper:
             item_index -= self.items_per_page
         return count
 
-Pag = PaginationHelper(['a','b','c','d','e','f'], 4)
+
+Pag = PaginationHelper(['a', 'b', 'c', 'd', 'e', 'f'], 4)
 print(Pag.page_item_count(1))
