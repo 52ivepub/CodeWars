@@ -1,20 +1,20 @@
 import pytest
 
-from main import dup
+from main import get_order
 
 
-def test_dup_00():
-    assert dup(["ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"]),['codewars','picaniny','hubububo']
+def test_get_order_00():
+    assert get_order("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza") == "Burger Fries Chicken Pizza Pizza Pizza Sandwich Milkshake Milkshake Coke"
 
 
-def test_dup_01():
-    assert dup(["abracadabra","allottee","assessee"]),['abracadabra','alote','asese']
+def test_get_order_01():
+    assert get_order("pizzachickenfriesburgercokemilkshakefriessandwich") == "Burger Fries Fries Chicken Pizza Sandwich Milkshake Coke"
 
 
-def test_dup_02():
-    assert dup(["kelless","keenness"]), ['keles','kenes']
+# def test_get_order_02():
+#     assert get_order(["gray","black","purple","purple","gray","black"]) == 3
 
 
-def test_error_dup_03():
+def test_error_get_order_03():
     with pytest.raises(TypeError):
-        assert dup(11) == 11
+        assert get_order(11) == 11
