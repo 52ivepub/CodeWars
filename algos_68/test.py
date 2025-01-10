@@ -1,26 +1,20 @@
 import pytest
 
-from main import is_solved
+from main import get_length_of_missing_array
 
 
-def test_is_solved_00():
-    assert is_solved([[0, 0, 1],
-                      [0, 1, 2],
-                      [2, 1, 0]]) == -1
+def test_get_length_of_missing_array_00():
+    assert get_length_of_missing_array([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]) ==  3
 
 
-def test_is_solved_01():
-    assert is_solved([[1, 1, 1],
-                      [0, 2, 2],
-                      [0, 0, 0]]) == 1
+def test_get_length_of_missing_array_01():
+    assert get_length_of_missing_array([[5, 2, 9], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]), 2
 
 
-def test_is_solved_02():
-    assert is_solved([[2, 1, 2],
-                      [2, 1, 1],
-                      [1, 1, 2]]) == 1
+def test_get_length_of_missing_array_02():
+    assert get_length_of_missing_array([[None], [None, None, None]]), 2
 
 
-def test_error_is_solved_03():
+def test_error_get_length_of_missing_array_03():
     with pytest.raises(TypeError):
-        assert is_solved(11) == 11
+        assert get_length_of_missing_array(11) == 11
