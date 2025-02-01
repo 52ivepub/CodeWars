@@ -1,20 +1,20 @@
 import pytest
 
-from main import format_words
+from main import delete_digit
 
 
-def test_format_words_00():
-    assert format_words(['one', 'two', 'three', 'four']), 'one, two, three and four'
+def test_delete_digit_00():
+    assert delete_digit(152),52
 
 
-def test_format_words_01():
-    assert format_words(['one']), 'one'
+def test_delete_digit_01():
+    assert delete_digit(1001),101
 
 
-def test_format_words_02():
-    assert format_words(['one', '', 'three']), 'one and three'
+def test_delete_digit_02():
+    assert delete_digit(10),1
 
 
-def test_error_format_words_03():
-    with pytest.raises(TypeError):
-        assert format_words(2) == 2
+def test_error_delete_digit_03():
+    with pytest.raises(ValueError):
+        assert delete_digit([]) == []
