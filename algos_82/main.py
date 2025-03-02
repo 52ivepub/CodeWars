@@ -10,8 +10,7 @@ def josephus(items,k):
     step = 1
     while len(items) > 0:
         if place + k <= len(items):
-            res.append(items[place+k-step])
-            items.pop(place+k-step)
+            res.append(items.pop(place+k-step))
             place = place+k-step
         else:
             place = place - len(items)
